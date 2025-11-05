@@ -8,44 +8,177 @@
 				"__type" : "pharoSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:32.529269+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:38.233695+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nRGoKDr/DQCR1HVqDgKVoA=="
+				},
+				"code" : "\"Create parser class if missing and add core behaviour\"\n\nparserClass := Smalltalk at: #LocatorLepiterParser ifAbsent: [\n  Object\n    subclass: #LocatorLepiterParser\n    instanceVariableNames: ''\n    classVariableNames: ''\n    package: 'Locator' ]."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:47.828705+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:47.828705+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tYWRKTr/DQCR6iwhDgKVoA=="
+				},
+				"code" : "\"Entry point: parse a FileReference\"\nparserClass class compile: \n'parseFileReference: aFileReference\n  | content |\n  content := aFileReference readStreamDo: [ :s | s contents ].\n  ^ self parseString: content'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:55.087068+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:52:55.087068+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vUUAKjr/DQCR8WUADgKVoA=="
+				},
+				"code" : "\"Entry point: parse a String (JSON first, then STON), always guarding KeyNotFound\"\nparserClass class compile:\n'parseString: aString\n  | dict |\n  dict := [\n    self parseJSON: aString ]\n      on: Error\n      do: [ \n        [ self parseSTON: aString ]\n          on: Error\n          do: [ Dictionary new ] ].\n  ^ self pageFromDictionary: dict'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:53:04.334409+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:53:04.334409+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1F+NKjr/DQCR+NvFDgKVoA=="
+				},
+				"code" : "\"JSON decoder (guarded)\"\nparserClass class compile:\n'parseJSON: aString\n  | reader |\n  reader := Smalltalk at: #NeoJSONReader ifAbsent: [ ^ Dictionary new ].\n  ^ reader fromString: aString'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:53:10.832372+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:53:10.832372+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rIbwKjr/DQCR/2tkDgKVoA=="
+				},
+				"code" : "\"STON decoder (guarded)\"\nparserClass class compile:\n'parseSTON: aString\n  | ston |\n  ston := Smalltalk at: #STON ifAbsent: [ ^ Dictionary new ].\n  ^ ston fromString: aString'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:53:34.408595+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:57:44.492106+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "xafEVTn/DQCIx9X4DgKVoA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to fix KeyNotFound"
-						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
@@ -71,7 +204,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:05:25.82924+01:00"
+									"dateAndTimeString" : "2025-11-05T13:50:36.464841+01:00"
 								}
 							},
 							"uid" : {
@@ -81,7 +214,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}."
+							"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}. DONE."
 						}
 					]
 				},
@@ -104,14 +237,88 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T12:29:32.029919+01:00"
+						"dateAndTimeString" : "2025-11-05T13:53:10.834125+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "DqS0/zj/DQCDjv1hDgKVoA=="
 				},
-				"code" : "\"Create parser class if missing\"\n(Smalltalk at: #LocatorLepiterParser) ifNil: [\n  Object subclass: #LocatorLepiterParser\n    instanceVariableNames: ''\n    classVariableNames: ''\n    package: 'Locator' ]."
+				"code" : "\"Dictionary → simple Smalltalk model (no bare #at:, always #at:ifAbsent: to avoid KeyNotFound)\"\nparserClass class compile:\n'pageFromDictionary: dict\n  | pageClass page title uuid snippets |\n\n  pageClass := Smalltalk at: #LocatorLepiterPage ifAbsent: [\n    Object\n      subclass: #LocatorLepiterPage\n      instanceVariableNames: ''title uuid snippets raw''\n      classVariableNames: ''''\n      package: ''Locator'' ].\n\n  page := pageClass new.\n\n  title := dict at: #title ifAbsent: [\n             dict at: ''title'' ifAbsent: [''''] ].\n  uuid := dict at: #uuid ifAbsent: [\n            dict at: #uid ifAbsent: [\n              dict at: ''uuid'' ifAbsent: [''''] ] ].\n  snippets := dict at: #snippets ifAbsent: [\n                dict at: ''snippets'' ifAbsent: [\n                  dict at: #content ifAbsent: [\n                    dict at: ''content'' ifAbsent: [ #() ] ] ] ].\n\n  page\n    instVarNamed: ''title'' put: (title ifNil: ['''']) asString;\n    instVarNamed: ''uuid'' put: (uuid ifNil: ['''']) asString;\n    instVarNamed: ''snippets'' put: (snippets isArray\n                                      ifTrue: [ snippets ]\n                                      ifFalse: [ Array with: snippets ]);\n    instVarNamed: ''raw'' put: dict.\n\n  ^ page'.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:49:11.408397+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:49:30.538955+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UTurHDr/DQCRR3fKDgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "See {{gtMethod:LocatorLepiterParser class>>#pageFromDictionary:}}"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:48:31.581867+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T13:48:31.581867+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3YZLGjr/DQCRLMT1DgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
 			}
 		]
 	},
