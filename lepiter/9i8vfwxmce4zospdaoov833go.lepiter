@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T11:49:23.116759+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T11:49:29.252789+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "DJs2cDj/DQC/Gc84DgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Yes—I can see the repo. The current README just shows a minimal Metacello install and a Lepiter loader snippet. ([GitHub][1])\n\nBelow are **full-file replacements** for both docs, written from my perspective of what the *locator* agent needs to do (return precise **topicmap coordinates** and stable identifiers for DMX topics). Paste these straight into the repo.\n\n---\n\n## README.md\n\n```markdown\n# locator — DMX Topic Locator Agent\n\n**Goal:** Given one or more topic *labels* (or IDs), return **precise, copy-pastable\nlocation tuples** for each topic inside a **specific DMX topic map**:\n`{topicmap_id, topic_id, x, y, label}` — plus optional context like\n`topicmap_name`, `type_uri`, and adjacency.\n\nThis agent exists so downstream tools (falsifier, docs-steward, runners) can\nreference the **exact on-canvas position** of topics without opening the DMX UI.\n\n---\n\n## What counts as a “location”?\n\nA **location** is the tuple:\n\n```\n\ntopicmap_id, topic_id, x, y, label\n\n```\n\nOptionally:\n\n```\n\ntopicmap_name, type_uri, zoom/scale, neighbors[]\n\n````\n\n> The agent never invents coordinates. It reads them from:\n> 1) a DMX topicmap **JSON export** you provide, or  \n> 2) a **paste** of the relevant nodes from such an export.\n\n---\n\n## Quick start\n\n### A) Use as a Pharo/GT agent (baseline available)\n```smalltalk\n\"Install (once BaselineOfLocator is published in this repo)\"\nMetacello new\n  baseline: 'Locator';\n  repository: 'github://RalfBarkow/locator:main/src';\n  load.\n````\n\n*If the baseline path changes, adjust the repository URL accordingly.*\n\n> The initial README showed a minimal install snippet and a Lepiter loader; if you\n> keep that flow, you can still do:\n>\n> ```smalltalk\n> \"Load Lepiter pages shipped with the project\"\n> #BaselineOfLocator asClass loadLepiter\n> ```\n>\n> and then run the examples from the page. (See repo README history.)\n\n### B) Use as a “data-in / locations-out” helper\n\n1. Export the **topic map JSON** from your DMX instance (or copy the subset of\n   nodes you care about).\n2. Feed it to the agent (e.g. paste into an issue, or call the API method below).\n3. Get back normalized locations.\n\n---\n\n## Minimal API (contract)\n\nThe reference implementation exposes a single entrypoint:\n\n```smalltalk\nLocator >> locateTopics: topicSpecs inTopicmap: topicmapSpec using: dataSource\n```\n\n* `topicSpecs` — labels or IDs, e.g.\n  `#('Debating Top-Down vs. Bottom-Up Sensemaking Approaches'\n     'Khinsen''s Synthesis'\n     'Falsifying Khinsen''s Synthesis'\n     'The Seamless Transition is a Category Error')`\n* `topicmapSpec` — map name or id, e.g. `'semantik'` or `878581`\n* `dataSource` — an object that yields topicmap JSON (from file, string, or API)\n\n**Return value (Array of Dictionaries):**\n\n```json\n[\n  {\n    \"label\": \"Falsifying Khinsen's Synthesis\",\n    \"topicmap_id\": 878581,\n    \"topicmap_name\": \"semantik\",\n    \"topic_id\": 123458,\n    \"x\": 2310,\n    \"y\": 940,\n    \"type_uri\": \"my.type/Falsification\",\n    \"neighbors\": [123457, 123459]\n  },\n  ...\n]\n```\n\nIf a topic cannot be resolved uniquely, the agent returns **candidates** with a\n`\"status\": \"ambiguous\"` tag and short hints (e.g. closest labels, types).\n\n---\n\n## Data sources\n\n* **JSON export** from DMX Webclient or server. The agent expects each node to\n  have a stable `topic_id` and on-canvas `x/y` in the map’s view properties.\n* **Direct API** (optional / future): a small adapter for your DMX REST endpoints\n  if available. (Not required to use the agent.)\n\n---\n\n## Example (human-friendly output)\n\n```\n- Debating Top-Down vs. Bottom-Up Sensemaking Approaches\n  - topicmap: semantik (id=878581)\n  - topic: id=123456\n  - position: x=2140, y=860\n\n- Khinsen's Synthesis\n  - topicmap: semantik (id=878581)\n  - topic: id=123457\n  - position: x=2200, y=910\n\n- Falsifying Khinsen's Synthesis\n  - topicmap: semantik (id=878581)\n  - topic: id=123458\n  - position: x=2310, y=940\n\n- The Seamless Transition is a Category Error\n  - topicmap: semantik (id=878581)\n  - topic: id=123459\n  - position: x=2360, y=1040\n```\n\n> Numbers above are **illustrative**. The agent will output your map’s actual\n> coordinates from the supplied data.\n\n---\n\n## Why this exists\n\nOther agents (falsifier, docs-steward, architecture-scribe) often need to **point\nback** to exact places in the map. The **locator** gives them stable, precise,\nmachine- and human-readable references without hand-waving.\n\n---\n\n## Contributing\n\n* Keep the **contract** stable (`topicmap_id`, `topic_id`, `x`, `y`, `label`).\n* Add adapters for other data formats as needed.\n* Prefer small, composable methods and deterministic tests.\n\nMIT © Ralf Barkow\n\n````\n\n---\n\n## SPEC.md\n\n```markdown\n# SPEC\nname: locator\ndescription: Resolve one or more topic labels/IDs to precise on-canvas locations within a specific DMX topic map, and return a normalized, copy-pastable result for humans and agents.\n\nmodel: gpt-5-thinking\ninputs:\n  - topicmap (name or id)\n  - topics (labels and/or topic_ids)\n  - data source (DMX topicmap JSON; optional adapter for REST; or pasted subset)\ntools:\n  - JSON parser\n  - optional: DMX REST adapter (if configured)\n  - optional: Lepiter pages for examples & tests\n\n# Responsibilities\n- Accept **topicmap spec** (name/id) and **topics** (labels/ids).\n- Read **coordinates** from supplied data (never invent x/y).\n- Disambiguate by label similarity, type, or neighbors; report **ambiguity** explicitly.\n- Return **normalized locations**:\n  - `topicmap_id, topic_id, x, y, label`\n  - optional: `topicmap_name, type_uri, neighbors[], zoom/scale`\n- Provide both **machine JSON** and **human summary** outputs.\n- Never mutate source data or write back to DMX.\n\n# Triggers\n- “locator: find …” or any request for **precise positions** of topics.\n- Other agents needing stable anchors (e.g., falsifier referencing specific nodes).\n\n# Process (internal)\n1. **Resolve topicmap** (by id or by exact name).\n2. **Index nodes** by `topic_id`, exact label, lowercase label, and n-gram tokens.\n3. For each input topic:\n   - If `topic_id` supplied: return exact node if present; else status=`not_found`.\n   - Else attempt **exact label** match; if none, try **case-folded** and **fuzzy** (~0.85).\n   - If multiple matches: mark status=`ambiguous` and include candidates with type hints.\n4. Extract `x/y` (and other view props) from the node’s map placement.\n5. Emit results; sort by input order.\n\n# Output (contracts)\n\n## JSON\n```json\n{\n  \"topicmap_id\": 878581,\n  \"topicmap_name\": \"semantik\",\n  \"results\": [\n    {\n      \"query\": \"Falsifying Khinsen's Synthesis\",\n      \"status\": \"ok\",\n      \"label\": \"Falsifying Khinsen's Synthesis\",\n      \"topic_id\": 123458,\n      \"x\": 2310,\n      \"y\": 940,\n      \"type_uri\": \"my.type/Falsification\",\n      \"neighbors\": [123457, 123459]\n    },\n    {\n      \"query\": \"Debating Top-Down vs. Bottom-Up Sensemaking Approaches\",\n      \"status\": \"ambiguous\",\n      \"candidates\": [\n        {\"topic_id\": 555001, \"label\": \"Debating Top-Down … (note)\", \"type_uri\": \"dmx/text\"},\n        {\"topic_id\": 555117, \"label\": \"Debating Top-Down … (index)\", \"type_uri\": \"dmx/index\"}\n      ]\n    }\n  ]\n}\n````\n\n## Human summary\n\n```\n- Falsifying Khinsen's Synthesis — topic id 123458 — x=2310, y=940\n- Debating Top-Down vs. Bottom-Up Sensemaking Approaches — AMBIGUOUS (2 candidates)\n```\n\n# Error taxonomy\n\n* `not_found` — no node with that id/label in the given map\n* `ambiguous` — multiple plausible nodes; list candidates\n* `no_coordinates` — node found but map placement lacks x/y\n* `invalid_source` — JSON malformed or missing required fields\n* `topicmap_mismatch` — results belong to a different map than requested\n\n# Security & privacy\n\n* Treat all input JSON as **local** to the session; do not transmit elsewhere.\n* Strip large text bodies when echoing results; return only identifiers & positions.\n\n# Tests (minimum)\n\n* Exact label, exact id, case-folded label\n* Ambiguity case (≥2 candidates)\n* Missing x/y\n* Mixed queries (ids and labels together)\n\n# Deliverables\n\n* Deterministic **JSON** result\n* Concise **human** summary block (copy-pastable)\n* (Optional) Lepiter examples for manual runs\n\n# Out of scope\n\n* Editing the DMX map\n* Inferring positions\n* Ranking “importance” of nodes\n\n```\n\n---\n\nIf you want, I can also add a tiny **Conventional Commit** message stub for dropping these two docs into the repo.\n::contentReference[oaicite:1]{index=1}\n```\n\n[1]: https://github.com/RalfBarkow/locator/tree/main?plain=1 \"GitHub - RalfBarkow/locator\"\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-05T11:54:34.856313+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-05T11:54:34.856313+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "What the locator agent needs to do (return precise topicmap coordinates and stable identifiers for DMX topics)"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "48983670-38ff-0d00-bf18-b2770e0295a0"
+	}
+}
