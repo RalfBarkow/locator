@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:11:09.598405+01:00"
+						"dateAndTimeString" : "2025-11-05T14:56:02.648976+01:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:11:18.037676+01:00"
+						"dateAndTimeString" : "2025-11-05T14:56:18.277104+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "BtvQQTv/DQCXH4RFDgKVoA=="
+					"uidString" : "6OvBCzv/DQCUQiqvDgKVoA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "See {{gtMethod:LocatorLepiterParser class>>#pageFromDictionary:}}"
+				"string" : "See [chatgpt](https://chatgpt.com/g/g-p-6908cb2a07cc819185fa4aeb27770a57-docs-steward/project)"
 			}
 		]
 	},
@@ -51,7 +51,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:37:17.664684+01:00"
+			"dateAndTimeString" : "2025-11-05T14:56:02.574281+01:00"
 		}
 	},
 	"editEmail" : {
@@ -62,15 +62,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:37:17.664684+01:00"
+			"dateAndTimeString" : "2025-11-05T14:56:02.574281+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Extractor"
+		"title" : "docs-steward"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "8bb88c1b-39ff-0d00-8500-90370e0295a0"
+		"uuid" : "b0c2c00b-3bff-0d00-9441-c58e0e0295a0"
 	}
 }

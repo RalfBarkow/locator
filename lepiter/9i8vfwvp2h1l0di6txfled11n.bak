@@ -5,6 +5,43 @@
 		"__type" : "snippets",
 		"items" : [
 			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T15:11:09.598405+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T15:11:09.598405+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BtvQQTv/DQCXH4RFDgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
 				"__type" : "pharoSnippet",
 				"children" : {
 					"__type" : "snippets",
@@ -34,7 +71,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:56:24.295425+01:00"
+									"dateAndTimeString" : "2025-11-05T12:56:50.07194+01:00"
 								}
 							},
 							"uid" : {
@@ -44,7 +81,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class"
+							"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}."
 						}
 					]
 				},

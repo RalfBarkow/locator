@@ -405,7 +405,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:02:53.200931+01:00"
+									"dateAndTimeString" : "2025-11-05T15:09:27.774787+01:00"
 								}
 							},
 							"uid" : {
@@ -415,7 +415,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[GitHub blob → raw helper]]"
+							"string" : "[[GitHub blob → raw helper (ensureRawUrl:)]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -614,6 +614,108 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T13:07:02.349587+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T13:07:02.349587+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "387shTn/DQCLtqjiDgKVoA=="
+							},
+							"code" : "page := LocatorLepiterParser parseFileReference: file.\ntexts := LocatorLepiterParser flattenSnippetTextsFrom: page."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T15:14:35.476774+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T15:14:35.476774+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "l0oWTjv/DQCXp8MaDgKVoA=="
+							},
+							"code" : "Transcript cr; show: 'Parsed Lepiter page: '; show: page asString; cr."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T13:07:06.218533+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-05T15:15:04.076318+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "CdYnhjn/DQCLvZjKDgKVoA=="
+							},
+							"code" : "Transcript show: 'First 3 snippet texts:'; cr.\ntexts split: (texts size min: 3) do: [:t | Transcript show: '— '; show: (t copyFrom: 1 to: (t size min: 200)); cr ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2025-11-05T12:14:27.583588+01:00"
 								}
 							},
@@ -625,14 +727,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:14:47.654643+01:00"
+									"dateAndTimeString" : "2025-11-05T13:07:06.272238+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "m/LiyTj/DQCA2flyDgKVoA=="
 							},
-							"code" : "page := LocatorLepiterParser parseFileReference: file.\ntexts := LocatorLepiterParser flattenSnippetTextsFrom: page.\n\nTranscript cr; show: 'Parsed Lepiter page: '; show: page asSummaryString; cr.\nTranscript show: 'First 3 snippet texts:'; cr.\ntexts first: (texts size min: 3) do: [:t | Transcript show: '— '; show: (t copyFrom: 1 to: (t size min: 200)); cr ].\npage inspect.  \"Open an inspector on the parsed page\""
+							"code" : "page inspect.  \"Open an inspector on the parsed page\""
 						}
 					]
 				},

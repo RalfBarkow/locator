@@ -98,7 +98,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T12:58:32.78541+01:00"
+						"dateAndTimeString" : "2025-11-05T15:08:45.387358+01:00"
 					}
 				},
 				"uid" : {
@@ -108,7 +108,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}."
+				"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}. DONE."
 			}
 		]
 	},

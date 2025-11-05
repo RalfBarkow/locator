@@ -8,42 +8,7 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:03:13.619698+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:04:04.851494+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "LLdKeDn/DQCLX55+DgKVoA=="
-							},
-							"code" : "\"GitHub blob → raw helper\"\nLocatorLepiterParser class compile:\n'ensureRawUrl: aString\n  | url segs owner repo sha path |\n  (Smalltalk at: #ZnUrl ifAbsent: [ ^ aString ]).\n  url := [ ZnUrl fromString: aString ] on: Error do: [ ^ aString ].\n  ((url host = ''github.com'') and: [ (url pathSegments includes: ''blob'') ])\n    ifFalse: [ ^ aString ].\n  segs := url pathSegments.\n  (segs size < 5 or: [ (segs at: 3) ~= ''blob'' ]) ifTrue: [ ^ aString ].\n  owner := segs first.\n  repo  := segs second.\n  sha   := segs fourth.\n  path  := String streamContents: [:s |\n            (segs copyFrom: 5 to: segs size) doWithIndex: [:each :i |\n              s nextPutAll: each.\n              (i < (segs size - 4)) ifTrue: [ s nextPut: $/ ] ] ].\n  ^ ''https://raw.githubusercontent.com/'' , owner , ''/'' , repo , ''/'' , sha , ''/'' , path'.\n"
-						}
-					]
+					"items" : [ ]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -53,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T13:06:46.832927+01:00"
+						"dateAndTimeString" : "2025-11-05T15:09:44.257442+01:00"
 					}
 				},
 				"editEmail" : {
@@ -64,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T13:06:48.044169+01:00"
+						"dateAndTimeString" : "2025-11-05T15:09:53.166167+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "ZxcAhTn/DQCLoAlADgKVoA=="
+					"uidString" : "3qe6PDv/DQCW6sjgDgKVoA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}."
+				"string" : "See {{gtMethod:LocatorLepiterParser class>>#ensureRawUrl:}}"
 			}
 		]
 	},
@@ -97,12 +62,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T13:02:54.582279+01:00"
+			"dateAndTimeString" : "2025-11-05T15:09:27.7052+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "GitHub blob → raw helper"
+		"title" : "GitHub blob → raw helper (ensureRawUrl:)"
 	},
 	"uid" : {
 		"__type" : "uuid",

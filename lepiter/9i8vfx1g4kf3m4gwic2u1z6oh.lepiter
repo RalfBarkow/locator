@@ -8,76 +8,7 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:31:09.927957+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:31:15.739366+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "PoKhBTn/DQCEMkSgDgKVoA=="
-							},
-							"code" : "\"Entry points\"\nLocatorLepiterParser class compile:\n'parseFileReference: aFileReference\n  | content |\n  content := aFileReference readStreamDo: [:s | s contents].\n  ^ self parseString: content'."
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:35:17.220165+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:35:19.427721+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "c+NeFDn/DQCEmTVSDgKVoA=="
-							},
-							"code" : "LocatorLepiterParser class compile:\n'parseString: aString\n  \"Robustly parse Lepiter 4.x/5.x files that are typically JSON; \n   gracefully fall back to STON if needed.\"\n  | dict |\n  dict := [ self parseJSON: aString ]\n            on: Error\n            do: [ [ self parseSTON: aString ] on: Error do: [ Dictionary new ] ].\n  ^ self pageFromDictionary: dict'."
-						}
-					]
+					"items" : [ ]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -87,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T13:06:07.664568+01:00"
+						"dateAndTimeString" : "2025-11-05T14:59:43.580144+01:00"
 					}
 				},
 				"editEmail" : {
@@ -98,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T13:06:09.170524+01:00"
+						"dateAndTimeString" : "2025-11-05T15:01:10.102918+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "6G2qgjn/DQCLjcuvDgKVoA=="
+					"uidString" : "IwztGDv/DQCVbVB8DgKVoA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "want: {{gtPage:pharo-code-emitter|db=9i8vfwzt61ozktwwfsus6vo2k}}: to create class LocatorLepiterParser, i.e. {{gtClass:LocatorLepiterParser}}."
+				"string" : "See {{gtMethod:LocatorLepiterParser class>>#parseFileReference:}} and {{gtMethod:LocatorLepiterParser class>>#parseString:}}"
 			}
 		]
 	},

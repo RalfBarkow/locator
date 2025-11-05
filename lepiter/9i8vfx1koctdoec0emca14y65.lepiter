@@ -405,7 +405,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:02:53.200931+01:00"
+									"dateAndTimeString" : "2025-11-05T15:09:27.774787+01:00"
 								}
 							},
 							"uid" : {
@@ -415,7 +415,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[GitHub blob → raw helper]]"
+							"string" : "[[GitHub blob → raw helper (ensureRawUrl:)]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -648,7 +648,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:07:06.218533+01:00"
+									"dateAndTimeString" : "2025-11-05T15:14:35.476774+01:00"
 								}
 							},
 							"editEmail" : {
@@ -659,14 +659,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T13:07:06.218533+01:00"
+									"dateAndTimeString" : "2025-11-05T15:14:35.476774+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "CdYnhjn/DQCLvZjKDgKVoA=="
+								"uidString" : "l0oWTjv/DQCXp8MaDgKVoA=="
 							},
-							"code" : "Transcript cr; show: 'Parsed Lepiter page: '; show: page asSummaryString; cr.\nTranscript show: 'First 3 snippet texts:'; cr.\ntexts first: (texts size min: 3) do: [:t | Transcript show: '— '; show: (t copyFrom: 1 to: (t size min: 200)); cr ]."
+							"code" : "Transcript cr; show: 'Parsed Lepiter page: '; show: page asString; cr."
 						},
 						{
 							"__type" : "pharoSnippet",

@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:11:09.598405+01:00"
+						"dateAndTimeString" : "2025-11-05T14:53:42.61738+01:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:11:18.037676+01:00"
+						"dateAndTimeString" : "2025-11-05T14:54:33.28653+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "BtvQQTv/DQCXH4RFDgKVoA=="
+					"uidString" : "WjFpAzv/DQCTwUoeDgKVoA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "See {{gtMethod:LocatorLepiterParser class>>#pageFromDictionary:}}"
+				"string" : "See [github](https://github.com/RalfBarkow/locator)"
 			}
 		]
 	},
@@ -51,7 +51,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:37:17.664684+01:00"
+			"dateAndTimeString" : "2025-11-05T14:53:42.536029+01:00"
 		}
 	},
 	"editEmail" : {
@@ -62,15 +62,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:37:17.664684+01:00"
+			"dateAndTimeString" : "2025-11-05T14:53:42.536029+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Extractor"
+		"title" : "locator"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "8bb88c1b-39ff-0d00-8500-90370e0295a0"
+		"uuid" : "31f26703-3bff-0d00-93c0-aa720e0295a0"
 	}
 }

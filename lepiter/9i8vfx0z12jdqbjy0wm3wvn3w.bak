@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:05:59.619015+01:00"
+						"dateAndTimeString" : "2025-11-05T15:13:30.614932+01:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T15:06:08.063006+01:00"
+						"dateAndTimeString" : "2025-11-05T15:13:40.669463+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "AfJWLzv/DQCWMLGMDgKVoA=="
+					"uidString" : "ypg4Sjv/DQCXaj7HDgKVoA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Context: {{"
+				"string" : "See {{gtMethod:}}"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -60,7 +60,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:45:14.514203+01:00"
+									"dateAndTimeString" : "2025-11-05T15:12:50.562306+01:00"
 								}
 							},
 							"editEmail" : {
@@ -71,12 +71,12 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-05T12:52:33.323909+01:00"
+									"dateAndTimeString" : "2025-11-05T15:12:53.006891+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "Wd/4Nzn/DQCGK15WDgKVoA=="
+								"uidString" : "UnHVRzv/DQCXWYyUDgKVoA=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
@@ -93,7 +93,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T12:28:36.690582+01:00"
+						"dateAndTimeString" : "2025-11-05T12:38:14.958953+01:00"
 					}
 				},
 				"editEmail" : {
@@ -104,14 +104,51 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-05T12:28:38.211274+01:00"
+						"dateAndTimeString" : "2025-11-05T12:38:16.715437+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "2Up//Dj/DQCDTlzEDgKVoA=="
+					"uidString" : "nvf2Hjn/DQCFOiK8DgKVoA=="
 				},
-				"code" : "\"Pretty\"\nLocatorLepiterPage compile:\n'asSummaryString\n  ^ String streamContents: [:str |\n    str\n      nextPutAll: (self title ifNil: [''(untitled)'']);\n      nextPutAll: '' (uuid: ''; nextPutAll: (self uuid ifNil: [''?']); nextPut: $); cr;\n      nextPutAll: (self textSnippets size) asString; nextPutAll: '' text snippets'' ]'."
+				"code" : "\"Helpers to fish out snippet texts from various shapes frequently seen in Lepiter\"\nLocatorLepiterParser class compile:\n'flattenSnippetTextsFrom: aPage\n  | texts |\n  texts := OrderedCollection new.\n  aPage textSnippets do: [:t | texts add: t asString ].\n  \"Common nested forms where snippet is a dict with {language -> {text: ...}}\"\n  aPage snippets do: [:s |\n    (s isDictionary)\n      ifTrue: [\n        (s keysDo: [:k | \n          | v |\n          v := s at: k.\n          ((v isDictionary) and: [ (v includesKey: #text) or: [v includesKey: ''text''] ])\n            ifTrue: [ texts add: (v at: #text ifAbsent: [ v at: ''text'' ]) ] ]) ] ].\n  ^ texts asArray'."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:37:59.240349+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:37:59.240349+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0R4HHjn/DQCFM7QaDgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
 			}
 		]
 	},
@@ -123,7 +160,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:28:26.393318+01:00"
+			"dateAndTimeString" : "2025-11-05T12:37:59.163862+01:00"
 		}
 	},
 	"editEmail" : {
@@ -134,15 +171,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-05T12:28:26.393318+01:00"
+			"dateAndTimeString" : "2025-11-05T12:37:59.163862+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Pretty"
+		"title" : "Helpers to fish out snippet texts from various shapes frequently seen in Lepiter"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "6229e2fb-38ff-0d00-8346-73ce0e0295a0"
+		"uuid" : "bcf2051e-39ff-0d00-8532-6ce70e0295a0"
 	}
 }
