@@ -1,0 +1,110 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:38:14.958953+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:38:16.715437+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nvf2Hjn/DQCFOiK8DgKVoA=="
+				},
+				"code" : "\"Helpers to fish out snippet texts from various shapes frequently seen in Lepiter\"\nLocatorLepiterParser class compile:\n'flattenSnippetTextsFrom: aPage\n  | texts |\n  texts := OrderedCollection new.\n  aPage textSnippets do: [:t | texts add: t asString ].\n  \"Common nested forms where snippet is a dict with {language -> {text: ...}}\"\n  aPage snippets do: [:s |\n    (s isDictionary)\n      ifTrue: [\n        (s keysDo: [:k | \n          | v |\n          v := s at: k.\n          ((v isDictionary) and: [ (v includesKey: #text) or: [v includesKey: ''text''] ])\n            ifTrue: [ texts add: (v at: #text ifAbsent: [ v at: ''text'' ]) ] ]) ] ].\n  ^ texts asArray'."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:37:59.240349+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-05T12:37:59.240349+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0R4HHjn/DQCFM7QaDgKVoA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-05T12:37:59.163862+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-05T12:37:59.163862+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Helpers to fish out snippet texts from various shapes frequently seen in Lepiter"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "bcf2051e-39ff-0d00-8532-6ce70e0295a0"
+	}
+}
